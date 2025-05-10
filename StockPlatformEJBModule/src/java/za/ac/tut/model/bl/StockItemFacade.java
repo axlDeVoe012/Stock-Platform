@@ -5,9 +5,12 @@
  */
 package za.ac.tut.model.bl;
 
+import java.util.Date;
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import za.ac.tut.model.entities.StockItem;
 
 /**
@@ -27,6 +30,23 @@ public class StockItemFacade extends AbstractFacade<StockItem> implements StockI
 
     public StockItemFacade() {
         super(StockItem.class);
+    }
+
+    @Override
+    public List<StockItem> getByCreationDate(Date creationDate) {
+        String queryStr = "SELECT s FROM StockItem s WHERE s.creationDate =:creationDate";
+        Query query = em.createQuery(queryStr);
+        query.setParameter("creationDate", creationDate);
+        List<StockItem> items = query.getResultList();
+        return items;
+    }
+
+    @Override
+    public Integer getTotalQuantity() {
+        String queryStr = "SELECT COUNT(s.quantity) FROM StockItem s";
+        Query query = em.createQuery(queryStr);
+        Integer totalQuantity = (Integer) query.getSingleResult();
+        return totalQuantity;
     }
     
 }

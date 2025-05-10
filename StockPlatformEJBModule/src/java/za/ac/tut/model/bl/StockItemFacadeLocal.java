@@ -5,6 +5,7 @@
  */
 package za.ac.tut.model.bl;
 
+import java.util.Date;
 import java.util.List;
 import javax.ejb.Local;
 import za.ac.tut.model.entities.StockItem;
@@ -30,4 +31,6 @@ public interface StockItemFacadeLocal {
 
     int count();
     
+    List<StockItem> getByCreationDate(Date creationDate);
+    Integer getTotalQuantity();
 }
