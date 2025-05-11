@@ -42,10 +42,10 @@ public class StockItemFacade extends AbstractFacade<StockItem> implements StockI
     }
 
     @Override
-    public Integer getTotalQuantity() {
+    public Long getTotalQuantity() {
         String queryStr = "SELECT COUNT(s.quantity) FROM StockItem s";
         Query query = em.createQuery(queryStr);
-        Integer totalQuantity = (Integer) query.getSingleResult();
+        Long totalQuantity = (Long) query.getSingleResult();
         return totalQuantity;
     }
 

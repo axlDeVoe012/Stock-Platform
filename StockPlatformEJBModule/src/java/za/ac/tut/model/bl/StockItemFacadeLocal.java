@@ -33,7 +33,7 @@ public interface StockItemFacadeLocal {
     
     List<StockItem> getByCreationDate(Date creationDate);
     
-    Integer getTotalQuantity();
+    Long getTotalQuantity();
     
     List<StockItem> getByRange(Integer min,Integer max);
     

@@ -16,6 +16,14 @@
         <servlet-name>GetTotalCostServlet</servlet-name>
         <servlet-class>za.ac.tut.controller.GetTotalCostServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>SearchByNameServlet</servlet-name>
+        <servlet-class>za.ac.tut.controller.SearchByNameServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>GetTotalItemsServlet</servlet-name>
+        <servlet-class>za.ac.tut.controller.GetTotalItemsServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>AddStockServlet</servlet-name>
         <url-pattern>/AddStockServlet.do</url-pattern>
@@ -31,6 +39,14 @@
     <servlet-mapping>
         <servlet-name>GetTotalCostServlet</servlet-name>
         <url-pattern>/GetTotalCostServlet.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SearchByNameServlet</servlet-name>
+        <url-pattern>/SearchByNameServlet.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GetTotalItemsServlet</servlet-name>
+        <url-pattern>/GetTotalItemsServlet.do</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
