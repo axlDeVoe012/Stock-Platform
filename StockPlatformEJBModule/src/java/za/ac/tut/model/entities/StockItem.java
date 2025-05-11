@@ -96,6 +96,7 @@ public class StockItem implements Serializable {
 
     public StockItem() {
     }
+    
     public Long getId() {
         return id;
     }
