@@ -48,5 +48,16 @@ public class StockItemFacade extends AbstractFacade<StockItem> implements StockI
         Integer totalQuantity = (Integer) query.getSingleResult();
         return totalQuantity;
     }
+
+    @Override
+    public List<StockItem> getByRange(Integer min, Integer max) {
+        
+         String queryStr = "SELECT s FROM StockItem s WHERE s.quantity >=:min AND max:<= s.quantity";
+         Query query = em.createQuery(queryStr);
+         query.setParameter("min", min);
+         query.setParameter("max", max);
+         List<StockItem> items = query.getResultList();
+         return items;
+    }
     
 }
