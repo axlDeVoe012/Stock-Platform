@@ -37,5 +37,10 @@ public interface StockItemFacadeLocal {
     
     List<StockItem> getByRange(Integer min,Integer max);
     
+    StockItem getByItemName(String itemName);
+    
     Double getTotalCost(Long id);
+    
+    Double getTotalRetail(Long id);
+    
 }
