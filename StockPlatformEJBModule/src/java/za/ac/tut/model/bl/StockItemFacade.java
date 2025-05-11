@@ -59,5 +59,17 @@ public class StockItemFacade extends AbstractFacade<StockItem> implements StockI
          List<StockItem> items = query.getResultList();
          return items;
     }
-    
+
+    @Override
+    public StockItem getByItemName(String itemName) {
+        String queryStr = "SELECT s FROM StockItem s WHERE s.itemName = :itemName";
+        Query query = em.createQuery(queryStr);
+        query.setParameter("itemName", itemName);
+        
+        StockItem item = (StockItem)query.getSingleResult();
+        
+        return item;
+    }
+
+   
 }

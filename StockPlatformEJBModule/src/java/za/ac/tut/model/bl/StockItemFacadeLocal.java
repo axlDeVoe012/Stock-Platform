@@ -37,5 +37,7 @@ public interface StockItemFacadeLocal {
     
     List<StockItem> getByRange(Integer min,Integer max);
     
+    StockItem getByItemName(String itemName);
+    
     
 }
