@@ -7,7 +7,6 @@ package za.ac.tut.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
 import javax.ejb.EJB;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -15,30 +14,28 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import za.ac.tut.model.bl.StockItemFacadeLocal;
-import za.ac.tut.model.entities.StockItem;
 
 /**
  *
- * @author Cornad Architectural
+ * @author Administrator
  */
-public class ViewStockServlet extends HttpServlet {
-
+public class GetTotalCostServlet extends HttpServlet {
+    @EJB StockItemFacadeLocal sfl;
     
-    @EJB
- StockItemFacadeLocal sfl;
-
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-       
-        List<StockItem> list = sfl.findAll();
+        Long id = Long.parseLong(request.getParameter("id"));
         
-        request.setAttribute("list", list);
+            Double totalCost = sfl.getTotalCost(id);
+            request.setAttribute("totalCost", totalCost);
+            
+            Double retailPrice = sfl.getTotalRetail(id);
+            request.setAttribute("retailPrice", retailPrice);
         
         
-         RequestDispatcher rd = request.getRequestDispatcher("view_stock_outcome.jsp");
-        rd.forward(request, response);
+        RequestDispatcher disp = request.getRequestDispatcher("total_cost_outcome.jsp");
+        disp.forward(request, response);
     }
 
-   
 }

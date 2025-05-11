@@ -89,7 +89,7 @@ public class StockItemFacade extends AbstractFacade<StockItem> implements StockI
         query.setParameter("id", id);
         
         StockItem si = (StockItem)query.getSingleResult();
-        Double retailPrice = si.getUnitPrice();
+        Double retailPrice = si.getRetailPrice();
         Integer quantity = si.getQuantity();
         
         Double totalRetail = retailPrice*quantity;
