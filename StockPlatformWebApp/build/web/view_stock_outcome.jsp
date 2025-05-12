@@ -66,6 +66,9 @@
                 }
             %>
         </table> 
-       
+        <p>
+                   
+           Click <a href="menu.html">here</a> to access the main menu or <a href="index.html">here </a>to access the home page 
+        </p>
     </body>
 </html>

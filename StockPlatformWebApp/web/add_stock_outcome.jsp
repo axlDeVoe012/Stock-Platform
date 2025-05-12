@@ -17,7 +17,7 @@
            <%
            String name = (String)request.getAttribute("itemName");
            %>
-           <%=name%>has been added to the database
+           <%=name%> has been added to the database
             <br>
             Click <a href="menu.html">here</a> to access the main menu or <a href="index.html">here </a>to access the home page
         </p>

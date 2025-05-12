@@ -52,7 +52,8 @@ public class StockItemFacade extends AbstractFacade<StockItem> implements StockI
     @Override
     public List<StockItem> getByRange(Integer min, Integer max) {
         
-         String queryStr = "SELECT s FROM StockItem s WHERE s.quantity >=:min AND max:<= s.quantity";
+         String queryStr = "SELECT s FROM StockItem s WHERE s.quantity >= :min AND s.quantity <= :max";
+
          Query query = em.createQuery(queryStr);
          query.setParameter("min", min);
          query.setParameter("max", max);

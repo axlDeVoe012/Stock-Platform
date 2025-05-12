@@ -19,6 +19,10 @@
         %>
             <p>
                 The total cost is : <b>R<%=totalCost%></b>, and the retail price is: <b>R<%=retailPrice%></b>
-            </p>         
+            </p>   
+             <p>
+                   
+           Click <a href="menu.html">here</a> to access the main menu or <a href="index.html">here </a>to access the home page 
+        </p>
     </body>
 </html>

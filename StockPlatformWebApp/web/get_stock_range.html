@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Range Selector</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>Range Selector</h1>
+        <p>
+            Please enter the required information below: 
+        </p>
+        <form action="GetStockByRangeServlet.do" method="post">
+            <table>
+            <tr>
+                <td>Enter the minimum value : </td>
+                <td><input type="text" name ="min"></td>
+            </tr>
+             <tr>
+                <td>Enter the maximum value : </td>
+                <td><input type="text" name ="max"></td>
+            </tr>
+             <tr>
+                <td></td>
+                <td><input type="submit" value="FILTER"></td>
+            </tr>
+        </table>
+        </form>
+        
+    </body>
+</html>

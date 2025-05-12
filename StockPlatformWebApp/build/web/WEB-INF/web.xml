@@ -24,6 +24,10 @@
         <servlet-name>GetTotalItemsServlet</servlet-name>
         <servlet-class>za.ac.tut.controller.GetTotalItemsServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>GetStockByRangeServlet</servlet-name>
+        <servlet-class>za.ac.tut.controller.GetStockByRangeServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>AddStockServlet</servlet-name>
         <url-pattern>/AddStockServlet.do</url-pattern>
@@ -48,9 +52,25 @@
         <servlet-name>GetTotalItemsServlet</servlet-name>
         <url-pattern>/GetTotalItemsServlet.do</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GetStockByRangeServlet</servlet-name>
+        <url-pattern>/GetStockByRangeServlet.do</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30
         </session-timeout>
     </session-config>
+    <error-page>
+        <error-code>404</error-code>
+        <location>/error_page.jsp</location>
+    </error-page>
+    <error-page>
+        <exception-type>java.lang.NullPointerException</exception-type>
+        <location>/error_page.jsp</location>
+    </error-page>
+    <error-page>
+        <exception-type>java.lang.NumberFormatException</exception-type>
+        <location>/invalid_input.jsp</location>
+    </error-page>
 </web-app>
